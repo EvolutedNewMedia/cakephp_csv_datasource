@@ -142,7 +142,7 @@ class CsvSource extends DataSource {
   /**
    *
    */
-  function read(&$model, $queryData = array(), $recursive = null) {
+  function read(Model $model, $queryData = array(), $recursive = null) {
     if (!$this->connected) {
       $this->_initConnection();
     }
