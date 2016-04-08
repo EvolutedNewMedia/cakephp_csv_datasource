@@ -52,6 +52,9 @@ class CsvSource extends DataSource {
  * Constructor
  */
 	public function __construct($config = null, $autoConnect = true) {
+			// included to fix end of line errors when csv files have been edited on a Mac
+			ini_set('auto_detect_line_endings', true);
+
 			parent::__construct($config);
 			$this->connected = false;
 			$this->delimiter = $this->config['delimiter'];
